@@ -1,5 +1,5 @@
 {
-    "version": "1.6.5",
+    "version": "1.6.5+1",
     "preview": false,
     "activationEvents": [
         "onDebugResolve:cortex-debug",
@@ -1117,6 +1117,12 @@
                                         "default": 1000,
                                         "minimum": 0
                                     },
+                                    "ipport": {
+                                        "description": "TCP port to use",
+                                        "default": 0,
+                                        "multipleOf": 1,
+                                        "type": "number"
+                                    },
                                     "clearSearch": {
                                         "type": "boolean",
                                         "description": "When true, clears the search-string. Only applicable when address is \"auto\"",
@@ -2228,6 +2234,12 @@
                                         "default": 1000,
                                         "minimum": 0
                                     },
+                                    "ipport": {
+                                        "description": "TCP port to use",
+                                        "default": 0,
+                                        "multipleOf": 1,
+                                        "type": "number"
+                                    },
                                     "clearSearch": {
                                         "type": "boolean",
                                         "description": "When true, clears the search-string. Only applicable when address is \"auto\"",
@@ -3073,7 +3085,7 @@
         "tslint": "^5.12.1",
         "typescript": "^3.9.7",
         "webpack": "^5.61.0",
-        "webpack-cli": "^4.9.1"
+        "webpack-cli": "^4.10.0"
     },
     "displayName": "Cortex-Debug",
     "engines": {

@@ -213,6 +213,7 @@ export interface RTTConfiguration {
     clearSearch: boolean;
     polling_interval: number;
     rtt_start_retry: number;
+    ipport: number;
     decoders: RTTCommonDecoderOpts[];
 }
 
@@ -410,11 +411,12 @@ export class RTTServerHelper {
         for (const dec of cfg.decoders) {
             if (dec.ports && (dec.ports.length > 0)) {
                 dec.tcpPorts = [];
+
                 for (const p of dec.ports) {
                     this.rttLocalPortMap[p] = dummy;
                 }
             } else {
-                this.rttLocalPortMap[dec.port] = dummy;
+                this.rttLocalPortMap[dec.port] = cfg.ipport != 0 ? cfg.ipport.toString() : dummy;
             }
         }
 
